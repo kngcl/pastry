@@ -44,11 +44,11 @@ export default function Dashboard({ reports }) {
   if (reports.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center py-20 animate-fade-in">
-        <div className="w-24 h-24 rounded-full bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center text-5xl mb-6">
+        <div className="w-28 h-28 rounded-[32px] bg-gradient-to-br from-amber-100 to-orange-100 flex items-center justify-center text-6xl mb-6 shadow-lg shadow-amber-100/50">
           <span>&#x1F95E;</span>
         </div>
-        <h3 className="text-2xl font-bold text-gray-700 mb-2">Bienvenue!</h3>
-        <p className="text-gray-400 text-center max-w-md">
+        <h3 className="text-2xl font-black text-gray-800 mb-2">Bienvenue!</h3>
+        <p className="text-gray-400 text-center max-w-md font-medium">
           Commencez par ajouter votre premier rapport de production pour voir vos statistiques ici.
         </p>
       </div>
@@ -80,7 +80,7 @@ export default function Dashboard({ reports }) {
 
       {/* Today's Summary */}
       {todayStats && (
-        <div className="relative overflow-hidden bg-gradient-to-br from-amber-500 via-orange-500 to-rose-500 rounded-3xl p-6 md:p-8 shadow-xl shadow-orange-500/20">
+        <div className="relative overflow-hidden bg-gradient-to-br from-amber-500 via-orange-500 to-rose-500 rounded-[28px] p-7 md:p-8 shadow-xl shadow-orange-500/20">
           <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -translate-y-32 translate-x-32" />
           <div className="absolute bottom-0 left-0 w-40 h-40 bg-white/5 rounded-full translate-y-20 -translate-x-20" />
 
@@ -136,13 +136,13 @@ export default function Dashboard({ reports }) {
       )}
 
       {/* Period Overview */}
-      <div className="bg-white rounded-3xl shadow-xl shadow-black/5 border border-white/60 p-6 md:p-8">
+      <div className="bg-white/90 backdrop-blur-xl rounded-[28px] shadow-lg shadow-black/[0.03] border border-white/80 p-7 md:p-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" /></svg>
           </div>
           <div>
-            <h3 className="text-xl font-bold text-gray-800">Vue d'ensemble</h3>
+            <h3 className="text-xl font-extrabold text-gray-900">Vue d'ensemble</h3>
             <p className="text-sm text-gray-400">{stats.days} jour{stats.days > 1 ? 's' : ''} de donnees</p>
           </div>
         </div>
@@ -185,12 +185,12 @@ export default function Dashboard({ reports }) {
       </div>
 
       {/* Per-Product Breakdown */}
-      <div className="bg-white rounded-3xl shadow-xl shadow-black/5 border border-white/60 p-6 md:p-8">
+      <div className="bg-white/90 backdrop-blur-xl rounded-[28px] shadow-lg shadow-black/[0.03] border border-white/80 p-7 md:p-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-orange-500 flex items-center justify-center">
             <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" /></svg>
           </div>
-          <h3 className="text-xl font-bold text-gray-800">Par produit</h3>
+          <h3 className="text-xl font-extrabold text-gray-900">Par produit</h3>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
@@ -238,13 +238,13 @@ export default function Dashboard({ reports }) {
 
       {/* Per-Unit Analysis */}
       {todayStats && (
-        <div className="bg-white rounded-3xl shadow-xl shadow-black/5 border border-white/60 p-6 md:p-8">
+        <div className="bg-white/90 backdrop-blur-xl rounded-[28px] shadow-lg shadow-black/[0.03] border border-white/80 p-7 md:p-8">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 to-blue-500 flex items-center justify-center">
               <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M9 7h6m0 10v-3m-3 3h.01M9 17h.01M9 14h.01M12 14h.01M15 11h.01M12 11h.01M9 11h.01M7 21h10a2 2 0 002-2V5a2 2 0 00-2-2H7a2 2 0 00-2 2v14a2 2 0 002 2z" /></svg>
             </div>
             <div>
-              <h3 className="text-xl font-bold text-gray-800">Analyse par unite</h3>
+              <h3 className="text-xl font-extrabold text-gray-900">Analyse par unite</h3>
               <p className="text-sm text-gray-400">Rapport d'aujourd'hui</p>
             </div>
           </div>

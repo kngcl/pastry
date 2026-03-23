@@ -28,7 +28,7 @@ export default function ReportHistory({ reports, onDelete, onEdit }) {
           <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
         </div>
         <div>
-          <h3 className="text-xl font-bold text-gray-800">Historique</h3>
+          <h3 className="text-xl font-extrabold text-gray-900">Historique</h3>
           <p className="text-sm text-gray-400">{reports.length} rapport{reports.length > 1 ? 's' : ''}</p>
         </div>
       </div>
@@ -40,7 +40,7 @@ export default function ReportHistory({ reports, onDelete, onEdit }) {
         return (
           <div
             key={report.date}
-            className="bg-white rounded-2xl shadow-sm shadow-black/5 border border-gray-100 hover:shadow-lg hover:border-gray-200 transition-all duration-300 overflow-hidden group"
+            className="bg-white/90 backdrop-blur-xl rounded-[24px] shadow-sm shadow-black/[0.03] border border-white/80 hover:shadow-xl hover:shadow-black/[0.06] transition-all duration-300 overflow-hidden group"
             style={{ animationDelay: `${idx * 50}ms` }}
           >
             <div className="p-5 md:p-6">
